@@ -6,4 +6,5 @@ def home(request):
 def reverse(request):
 	text = request.GET["message"]
 	reversetext = text[::-1]
-	return render(request, 'reverse.html', {'text':text, 'reversetext':reversetext} )
+	words = len(text.split())
+	return render(request, 'reverse.html', {'text':text, 'reversetext':reversetext, 'words': words} )
